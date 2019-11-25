@@ -32,6 +32,7 @@ export class ServersService {
     const server = this.servers.find(s => {
       return s.id === id;
     });
+    console.log(server);
     if (server) {
       server.name = serverInfo.name;
       server.status = serverInfo.status;

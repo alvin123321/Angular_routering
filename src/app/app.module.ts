@@ -1,3 +1,5 @@
+import { ServerResolver } from './servers/server/server-resolver.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
@@ -30,7 +32,13 @@ import { AuthGuard } from './auth-guard.services';
     PageNotFoundComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [ServersService, AuthGuard, AuthService],
+  providers: [
+    ServersService,
+    AuthGuard,
+    AuthService,
+    CanDeactivateGuard,
+    ServerResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
